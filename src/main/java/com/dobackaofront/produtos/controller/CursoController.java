@@ -61,6 +61,7 @@ public class CursoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluirCurso(@PathVariable Long id) {
         Optional<Curso> curso = cursoService.findById(id);
+
         if (curso.isPresent()) {
             cursoService.excluirCurso(id);
             return ResponseEntity.noContent().build();
